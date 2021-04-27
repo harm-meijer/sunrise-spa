@@ -3,7 +3,7 @@
 
 <template>
 <nav>
-  <ul v-if="sortedCategories && sortedCategories.length">
+  <ul v-if="howMany(sortedCategories)">
     <li
       class="position-static"
       v-for="category1stLevel in sortedCategories"
@@ -18,13 +18,13 @@
         :class="isActive(category1stLevel.name) ? 'active' : ''"
         data-test="category-1st-level-link"
       >
-        {{ category1stLevel.name.toUpperCase() }}
+        {{ category1stLevel.name }}
       </router-link>
 
       <ul
-        v-if="category1stLevel.children.length"
+        v-if="howMany(category1stLevel.children)"
         class="mega-menu"
-        :class="category1stLevel.children.length === 2 ? 'menu-2-col mega-menu-width3' : 'mega-menu-width3'"
+        :class="howMany(category1stLevel.children) === 2 ? 'menu-2-col mega-menu-width3' : 'mega-menu-width3'"
       >
         <li>
           <ul class="mega-menu-width4">
