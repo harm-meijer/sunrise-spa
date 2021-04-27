@@ -33,15 +33,22 @@ export default {
       "https://api.europe-west1.gcp.commercetools.com",
   },
   languages: {
-    en: "English",
-    de: "Deutsch",
+    "en-GB": "English",
+    "de-DE": "Deutsch",
   },
   countries: {
+    GB: "Great Britten",
     DE: "Deutschland",
     US: "United States",
   },
   formats: {
     number: {
+      GB: {
+        currency: {
+          style: "currency",
+          currency: "GBP",
+        },
+      },
       DE: {
         currency: {
           style: "currency",
@@ -57,6 +64,13 @@ export default {
       },
     },
     datetime: {
+      GB: {
+        short: {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        },
+      },
       US: {
         short: {
           year: "numeric",
@@ -74,48 +88,11 @@ export default {
     },
   },
   categories: {
-    salesExternalId: "6",
+    // salesExternalId: "6",
   },
-  facetSearches: [
-    {
-      name: "size",
-      type: "text",
-      label: {
-        it: "Size",
-        de: "Größe",
-        en: "Size",
-      },
-    },
-    {
-      name: "color",
-      type: "lnum",
-      component: "colors",
-      label: {
-        de: "Farbe",
-        it: "Color",
-        en: "Color",
-      },
-    },
-    {
-      name: "designer",
-      type: "enum",
-      component: "designer",
-      label: {
-        it: "Designer",
-        de: "Designer",
-        en: "Designer",
-      },
-    },
-  ],
-  detailAttributes: [
-    "designer",
-    "colorFreeDefinition",
-    "size",
-    "style",
-    "gender",
-    "articleNumberManufacturer",
-  ],
-  variantSelector: ["color", "size"],
-  variantInProductName: ["size"],
-  ...localConfig
+  facetSearches: [],
+  detailAttributes: [],
+  variantSelector: [],
+  variantInProductName: [],
+  ...localConfig,
 };
