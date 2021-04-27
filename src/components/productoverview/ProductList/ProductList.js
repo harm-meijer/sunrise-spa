@@ -59,7 +59,7 @@ const getProducts = (component) => {
   const {
     category,
     currency,
-    country,
+    // country,
     loc,
     searchText,
     sort,
@@ -83,7 +83,7 @@ const getProducts = (component) => {
         page: Number(route.params?.page || 1),
         pageSize: component.limit,
         priceCurrency: currency,
-        priceCountry: country,
+        // priceCountry: country,
         ...sort,
         ...priceFilter,
         ...searchText,
