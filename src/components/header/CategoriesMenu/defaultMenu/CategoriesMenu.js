@@ -24,9 +24,12 @@ export default {
     mobileImage(level) {
       return this.isMenuOpen(level) ? minus : plus;
     },
+    howMany(categories) {
+      return categories?.length || 0;
+    },
     isActive(name) {
       // eslint-disable-next-line no-param-reassign
-      name = name.toLowerCase();
+      name = name && name.toLowerCase();
       // eslint-disable-next-line no-useless-escape
       const regex = new RegExp(`^${name}*\w?`);
       return this.$route.params.categorySlug?.match(regex);
@@ -101,12 +104,12 @@ export default {
           ) {
             results {
               ...MenuCategoryInfo
-              children {
-                ...MenuCategoryInfo
-                children {
-                  ...MenuCategoryInfo
-                }
-              }
+              # children {
+              #   ...MenuCategoryInfo
+              #   children {
+              #     ...MenuCategoryInfo
+              #   }
+              # }
             }
           }
         }
