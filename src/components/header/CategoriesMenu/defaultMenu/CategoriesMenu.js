@@ -104,12 +104,12 @@ export default {
           ) {
             results {
               ...MenuCategoryInfo
-              # children {
-              #   ...MenuCategoryInfo
+              children {
+                ...MenuCategoryInfo
               #   children {
               #     ...MenuCategoryInfo
               #   }
-              # }
+              }
             }
           }
         }

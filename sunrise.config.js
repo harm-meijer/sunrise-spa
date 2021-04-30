@@ -90,7 +90,24 @@ export default {
   categories: {
     // salesExternalId: "6",
   },
-  facetSearches: [],
+  facetSearches: [
+    {
+      name: "Color",
+      type: "text",
+      label: {
+        'de-DE': "Farbe",
+        'en-GB': "Color",
+      },
+    },
+    {
+      name: "Size",
+      type: "text",
+      label: {
+        'de-DE': "Größe",
+        'en-GB': "Size",
+      },
+    }
+  ],
   detailAttributes: [],
   variantSelector: [],
   variantInProductName: [],
